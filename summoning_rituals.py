@@ -20,7 +20,7 @@ class SummoningRitual:
             self.__undead_name = ""
 
         self.__starting_health = self.__validate_stat(starting_health, Undead.MIN_HEALTH, Undead.MAX_HEALTH)
-        self.__starting_power = self.__validate_stat(starting_power, Undead.MIN_POWER, Undead.MAX_HEALTH)
+        self.__starting_power = self.__validate_stat(starting_power, Undead.MIN_POWER, Undead.MAX_POWER)
 
         self.__necrotic_cost = self.__validate_cost(necrotic_cost)
         self.__spirit_cost = self.__validate_cost(spirit_cost)
@@ -37,7 +37,7 @@ class SummoningRitual:
         return max(minimum, min(value, maximum))
 
     def __validate_cost(self, value):
-        if (isinstance(value, int) and isinstance(value, bool) and value >= SummoningRitual.MIN_COST):
+        if (isinstance(value, int) and not isinstance(value, bool) and value >= SummoningRitual.MIN_COST):
             return value
         return SummoningRitual.MIN_COST
 
