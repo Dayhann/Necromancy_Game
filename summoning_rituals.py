@@ -97,6 +97,27 @@ class SummoningRitual:
     bone_cost = property(get_bone_cost)
     flesh_cost = property(get_flesh_cost)
     ectoplasm_cost = property(get_ectoplasm_cost)
+
+    def __str__(self):
+        return (f"{self.__name}: summons {self.__undead_name} "
+                f"(Health {self.__starting_health}, "
+                f"Power {self.__starting_power}) | Cost - "
+                f"Necrotic {self.__necrotic_cost}, "
+                f"Spirit {self.__spirit_cost}, "
+                f"Bone {self.__bone_cost}, "
+                f"Flesh {self.__flesh_cost}, "
+                f"Ectoplasm {self.__ectoplasm_cost}")
+
+    def __repr__(self):
+        return (f"SummoningRitual(name='{self.__name}', "
+                f"undead_name='{self.__undead_name}', "
+                f"starting_health={self.__starting_health}, "
+                f"starting_power={self.__starting_power}, "
+                f"necrotic_cost={self.__necrotic_cost}, "
+                f"spirit_cost={self.__spirit_cost}, "
+                f"bone_cost={self.__bone_cost}, "
+                f"flesh_cost={self.__flesh_cost}, "
+                f"ectoplasm_cost={self.__ectoplasm_cost})")
     
 
 
