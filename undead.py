@@ -63,6 +63,16 @@ class Undead:
     power = property(get_power)
     level = property(get_level)
 
+    def __str__(self):
+        return (f"{self.__name} (Unit #{self.__unit_id}) - "
+                f"Level {self.__level}: "
+                f"Health {self.__health}/{Undead.MAX_HEALTH}, "
+                f"Power {self.__power}/{Undead.MAX_POWER}")
+
+    def __repr__(self):
+        return (f"Undead(unit_id={self.__unit_id}, name='{self.__name}', "
+                f"health={self.__health}, power={self.__power}, "
+                f"level={self.__level})")
     
 
 
