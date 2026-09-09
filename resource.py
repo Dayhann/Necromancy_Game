@@ -23,12 +23,12 @@ class Resource:
         self.__ectoplasm += ectoplasm
         return True
     
-# refuses invalid quantities:
+    # refuses invalid quantities:
     def __is_valid_quantity(self, quantity):
         return (isinstance(quantity, int) and not isinstance(quantity, bool)
                 and quantity >= Resource.MIN_QUANTITY)
 
-# repairs invalid quantities, uses default value of 0 instead:
+    # repairs invalid quantities, uses default value of 0 instead:
     def __validate_quantity(self, quantity):
         if self.__is_valid_quantity(quantity):
             return quantity
@@ -71,13 +71,31 @@ class Resource:
     def get_flesh_runes(self):
         return self.__flesh
 
-    def get_ectoplasm_runes(self):
+    def get_ectoplasm(self):
         return self.__ectoplasm
 
+    necrotic = property(get_necrotic_runes)
+    spirit = property(get_spirit_runes)
+    bone = property(get_bone_runes)
+    flesh = property(get_flesh_runes)
+    ectoplasm = property(get_ectoplasm)
+
+    def __str__(self):
+        return (f"Necrotic Runes: {self.__necrotic}\n"
+                f"Spirit Runes: {self.__spirit}\n"
+                f"Bone Runes: {self.__bone}\n"
+                f"Flesh Runes: {self.__flesh}\n"
+                f"Ectoplasm: {self.__ectoplasm}")
+
+    def __repr__(self):
+        return (f"Resource(necrotic_runes={self.__necrotic}, "
+                f"spirit_runes={self.__spirit}, "
+                f"bone_runes={self.__bone}, "
+                f"flesh_runes={self.__flesh}, "
+                f"ectoplasm={self.__ectoplasm})")
+        
 
 
 
 
-# resources = Resource(2,4,2,4,2)
-# print(resources)
- 
+
