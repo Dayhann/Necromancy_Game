@@ -41,7 +41,7 @@ class SummoningRitual:
             return value
         return SummoningRitual.MIN_COST
 
-    def can_perfom_ritual(self, resource):
+    def can_perform(self, resource):
         if not isinstance(resource, Resource):
             print("Invalid resource pool: a Resource 'object' is required.")
             return False
