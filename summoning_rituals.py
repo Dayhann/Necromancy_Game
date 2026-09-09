@@ -58,6 +58,45 @@ class SummoningRitual:
             self.__ectoplasm_cost
         )
 
+    def create_undead(self, unit_id):
+        return Undead(unit_id, self.__undead_name, self.__starting_health, self.__starting_power)
+
+    def get_name(self):
+        return self.__name
+
+    def get_undead_name(self):
+        return self.__undead_name
+
+    def get_starting_health(self):
+        return self.__starting_health   
+
+    def get_starting_power(self):
+        return self.__starting_power
+
+    def get_necrotic_cost(self):
+        return self.__necrotic_cost
+
+    def get_spirit_cost(self):
+        return self.__spirit_cost
+    
+    def get_bone_cost(self):
+        return self.__bone_cost
+
+    def get_flesh_cost(self):
+        return self.__flesh_cost
+
+    def get_ectoplasm_cost(self):
+        return self.__ectoplasm_cost
+
+    name = property(get_name)
+    undead_name = property(get_undead_name)
+    starting_health = property(get_starting_health)
+    starting_power = property(get_starting_power)
+    necrotic_cost = property(get_necrotic_cost)
+    spirit_cost = property(get_spirit_cost)
+    bone_cost = property(get_bone_cost)
+    flesh_cost = property(get_flesh_cost)
+    ectoplasm_cost = property(get_ectoplasm_cost)
     
 
 
